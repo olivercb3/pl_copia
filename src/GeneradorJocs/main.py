@@ -11,14 +11,14 @@ import argparse
 
 #"Imports"
 
-import "print.py" as print
-import "input.py" as input
-import "random.py" as myRandom
+import MyPrint as output
+import MyInput as input
+import randomgenerator as myRandom
 
 
 def main(arguments):
     args = input.inputHandler(arguments)
-    rng = myRandom.rng()
+    rng = myRandom.RNG()
     setUp(rng)
     numHab = rng.getRandomNumber(3,15)
     numRes = rng.getRandomNumber(1,20)
@@ -27,59 +27,59 @@ def main(arguments):
     printObjects(numHab,numRes,numDies)
     printInit(numHab,numRes,numDies,rng)
     printGoal()
-    printEnd(numHab,numRes,numDies)
+    printEnd()
 
 def setUp(rng):
     return
 
 def printStart():
-    print.printStart()
+    output.printStart()
     return
 
 def printGoal():
-    print.printGoal()
+    output.printGoal()
     return
 
 def printEnd():
-    print.printEnd()
+    output.printEnd()
     return
 
 def printObjects(numHab,numRes,numDies):
-    print.printStartObjects()
+    output.printStartObjects()
     for i in range(numHab):
-        print.printHab(i)
+        output.printHab(i)
 
     for i in range(numRes):
-        print.printReserva(i)
+        output.printReserva(i)
 
     for i in range(numDies):
-        print.printDia(i)
+        output.printDia(i)
 
-    print.printTabbedEndParagraph()
+    output.printTabbedEndParagraph()
     return
 
 def printInit(numHab,numRes,numDies, rng):
-    print.printStartinit()
+    output.printStartinit()
     #lliueres
     for h in range(numHab):
         for d in range(numDies):
-            print.printLliure(h,d)
+            output.printLliure(h,d)
 
     #reservada
     for r in range(numRes):
         diaInicial = rng.getRandomNumber(0,numDies-1)
         diaFinal = min(numDies, diaInicial + rng.getnumDiesReserva())
         for d in range(diaInicial,diaFinal,1):
-            print.printReservada(r, rng.getCapacitatReserva())
+            output.printReservada(r, rng.getCapacitatReserva())
 
     #capacitat
     for h in range(numHab):
-        print.printCapacitatHabitacio(h, rng.getCapacitatHab())
+        output.printCapacitatHabitacio(h, rng.getCapacitatHab())
 
     for r in range(numRes):
-        print.printCapacitatReserva(r, rng.getCapacitatReserva())
+        output.printCapacitatReserva(r, rng.getCapacitatReserva())
 
-    print.printTabbedEndParagraph()
+    output.printTabbedEndParagraph()
     return
 
 

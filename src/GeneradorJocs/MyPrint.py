@@ -11,17 +11,17 @@ def printStartObjects():
     return
 
 def printHab(num):
-    "    habitacio"+str(num)+" - habitacio"
+    print("    habitacio"+str(num)+" - habitacio")
     return
 
 def printReserva(num):
-    "    reserva"+str(num)+" - reserva"
+    print("    reserva"+str(num)+" - reserva")
     return
 
 def printDia(num):
-    "    dia"+str(num)+" - dia"
+    print("    dia"+str(num)+" - dia")
     return
-    
+
 def printStartinit():
     print("  (:init")
     return
@@ -39,17 +39,17 @@ def printSeparation():
     return
 
 def printLliure(hab, dia):
-    print("(lliure habitacio" + str(hab) + " dia" +  str(dia) + ")")
+    print("    (lliure habitacio" + str(hab) + " dia" +  str(dia) + ")")
     return
 
 def printReservada(res, dia):
-    print("(reservada reserva" + str(res) + " dia" +  str(dia) + ")")
+    print("    (reservada reserva" + str(res) + " dia" +  str(dia) + ")")
     return
 
 def printCapacitatHabitacio(hab, num):
-    print("(= (capacitat_habitacio habitacio" + str(hab) + ") " +  str(num) + ")")
+    print("    (= (capacitat_habitacio habitacio" + str(hab) + ") " +  str(num) + ")")
     return
 
 def printCapacitatReserva(res, num):
-    print("(= (capacitat_reserva reserva" + str(res) + ") " +  str(num) + ")")
+    print("    (= (capacitat_reserva reserva" + str(res) + ") " +  str(num) + ")")
     return
