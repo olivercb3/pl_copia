@@ -14,14 +14,14 @@ import argparse
 import MyPrint as output
 import MyInput as input
 import randomgenerator as myRandom
-
+import random
 
 def main(arguments):
     args = input.inputHandler(arguments)
     rng = myRandom.RNG()
     setUp(rng)
-    numHab = rng.getRandomNumber(3,15)
-    numRes = rng.getRandomNumber(1,20)
+    numHab = rng.getRandomNumber(3,5)
+    numRes = rng.getRandomNumber(1,4)
     numDies = 30
     printStart()
     printObjects(numHab,numRes,numDies)
@@ -70,7 +70,7 @@ def printInit(numHab,numRes,numDies, rng):
         diaInicial = rng.getRandomNumber(0,numDies-1)
         diaFinal = min(numDies, diaInicial + rng.getnumDiesReserva())
         for d in range(diaInicial,diaFinal,1):
-            output.printReservada(r, rng.getCapacitatReserva())
+            output.printReservada(r, d)
 
     #capacitat
     for h in range(numHab):

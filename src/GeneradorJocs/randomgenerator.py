@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-)
 from __future__ import unicode_literals
 #!/usr/bin/python
-import random as p
+
+import random
 
 class RNG:
     """Class to handle randomness"""
@@ -14,30 +15,27 @@ class RNG:
 
     minDiesReserva = 1
     maxDiesReserva = 10
+    seed = 0
 
     def __init__(self):
-        return
-        self.rng = p.seed()
-        print(p.seed().randint(0,5))
+        self.seed =random.seed()
+        print(self.seed)
 
     def changeSeed(self,mySeed):
-        self.rng = random.seed(mySeed)
+        self.seed = mySeed
+        random = random.seed(mySeed)
 
     def setUp(args):
         return
 
     def getCapacitatHab(self):
-        return 3
-        return self.rng.randint(minCapHab,maxCapHab)
+        return random.randint(self.minCapHab,self.maxCapHab)
 
     def getCapacitatReserva(self):
-        return 2
-        return self.rng.randint(minCapRes,maxCapRes)
+        return random.randint(self.minCapRes,self.maxCapRes)
 
     def getnumDiesReserva(self):
-        return 3
-        return self.rng.randint(minDiesReserva,maxDiesReserva)
+        return random.randint(self.minDiesReserva,self.maxDiesReserva)
 
     def getRandomNumber(self, min,max):
-        return 4
-        return self.rng.randint(min,max)
+        return random.randint(min,max)
