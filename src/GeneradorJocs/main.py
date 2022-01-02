@@ -17,16 +17,20 @@ import randomgenerator as myRandom
 import random
 
 original_stdout = sys.stdout
-printedJocs = 0
 
 def main(arguments):
     args = input.inputHandler(arguments)
-    printedJocs = 3
     printJocProva(
         numHab = 8,
-        numRes = 3,
-        numDies = 10,
-        outputfile = "jocprova5.pddl"
+        numRes = 5,
+        numDies = 30,
+        outputfile = "joc1.pddl"
+    )
+    printJocProva(
+        numHab = 8,
+        numRes = 5,
+        numDies = 30,
+        outputfile = "joc2.pddl"
     )
 
 def printJocProva(
