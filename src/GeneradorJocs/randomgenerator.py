@@ -18,8 +18,7 @@ class RNG:
     seed = 0
 
     def __init__(self):
-        self.seed =random.seed()
-        print(self.seed)
+        random.seed()
 
     def changeSeed(self,mySeed):
         self.seed = mySeed
