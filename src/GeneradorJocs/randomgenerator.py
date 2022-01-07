@@ -36,5 +36,8 @@ class RNG:
     def getnumDiesReserva(self):
         return random.randint(self.minDiesReserva,self.maxDiesReserva)
 
+    def getOrientation(self):
+        return random.randint(0,3)
+
     def getRandomNumber(self, min,max):
         return random.randint(min,max)

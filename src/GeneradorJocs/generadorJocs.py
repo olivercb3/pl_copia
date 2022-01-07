@@ -11,8 +11,12 @@ import argparse
 
 #"Imports"
 
-import MyPrint as output
 import MyInput as input
+
+import MyPrint0 as output0
+import MyPrint1 as output1
+import MyPrint2 as output2
+import MyPrint3 as output3
 import randomgenerator as myRandom
 import random
 
@@ -50,43 +54,43 @@ def main(arguments):
     return
 
 def printNivellBasic( rng, numHab, numRes , numDies, outFile):
-    printStart(file=outFile)
-    printObjects(numHab,numRes,numDies,file=outFile)
-    printInit(numHab,numRes,numDies,rng,file=outFile)
-    printGoal(file=outFile)
-    printEnd(file=outFile)
+    output0.printStart(file=outFile)
+    output0.printObjects(numHab,numRes,numDies,file=outFile)
+    output0.printInit(numHab,numRes,numDies,rng,file=outFile)
+    output0.printGoal(file=outFile)
+    output0.printEnd(file=outFile)
     return
 
 def printExtension1( rng, numHab, numRes , numDies, outFile):
-    printStart(file=outFile)
-    printObjects(numHab,numRes,numDies,file=outFile)
-    printInit(numHab,numRes,numDies,rng,file=outFile)
-    printGoal(file=outFile)
-    printEnd(file=outFile)
+    output1.printStart(file=outFile)
+    output1.printObjects(numHab,numRes,numDies,file=outFile)
+    output1.printInit(numHab,numRes,numDies,rng,file=outFile)
+    output1.printGoal(file=outFile)
+    output1.printEnd(file=outFile)
     return
 
 def printExtension2( rng, numHab, numRes , numDies, outFile):
-    printStart(file=outFile)
-    printObjects(numHab,numRes,numDies,file=outFile)
-    printInit(numHab,numRes,numDies,rng,file=outFile)
-    printGoal(file=outFile)
-    printEnd(file=outFile)
+    output2.printStart(file=outFile)
+    output2.printObjects(numHab,numRes,numDies,file=outFile)
+    output2.printInit(numHab,numRes,numDies,rng,file=outFile)
+    output2.printGoal(file=outFile)
+    output2.printEnd(file=outFile)
     return
 
 def printExtension3( rng, numHab, numRes , numDies, outFile):
-    printStart(file=outFile)
-    printObjects(numHab,numRes,numDies,file=outFile)
-    printInit(numHab,numRes,numDies,rng,file=outFile)
-    printGoal(file=outFile)
-    printEnd(file=outFile)
+    output3.printStart(file=outFile)
+    output3.printObjects(numHab,numRes,numDies,file=outFile)
+    output3.printInit(numHab,numRes,numDies,rng,file=outFile)
+    output3.printGoal(file=outFile)
+    output3.printEnd(file=outFile)
     return
 
 def printExtension4( rng, numHab, numRes , numDies, outFile):
-    printStart(file=outFile)
-    printObjects(numHab,numRes,numDies,file=outFile)
-    printInit(numHab,numRes,numDies,rng,file=outFile)
-    printGoal(file=outFile)
-    printEnd(file=outFile)
+    output4.printStart(file=outFile)
+    output4.printObjects(numHab,numRes,numDies,file=outFile)
+    output4.printInit(numHab,numRes,numDies,rng,file=outFile)
+    output4.printGoal(file=outFile)
+    output4.printEnd(file=outFile)
     return
 
 
@@ -157,55 +161,7 @@ def printJocProva(
 def setUp(rng):
     return
 
-def printStart(file = original_stdout):
-    output.printStart(file)
-    return
 
-def printGoal(file = original_stdout):
-    output.printGoal(file)
-    return
-
-def printEnd(file = original_stdout):
-    output.printEnd(file)
-    return
-
-def printObjects(numHab,numRes,numDies,file = original_stdout):
-    output.printStartObjects(file)
-    for i in range(numHab):
-        output.printHab(i,file)
-
-    for i in range(numRes):
-        output.printReserva(i,file)
-
-    for i in range(numDies):
-        output.printDia(i,file)
-
-    output.printTabbedEndParagraph(file)
-    return
-
-def printInit(numHab,numRes,numDies, rng,file = original_stdout):
-    output.printStartinit(file)
-    #lliueres
-    for h in range(numHab):
-        for d in range(numDies):
-            output.printLliure(h,d,file)
-
-    #reservada
-    for r in range(numRes):
-        diaInicial = rng.getRandomNumber(0,numDies-1)
-        diaFinal = min(numDies, diaInicial + rng.getnumDiesReserva())
-        for d in range(diaInicial,diaFinal,1):
-            output.printReservada(r, d,file)
-
-    #capacitat
-    for h in range(numHab):
-        output.printCapacitatHabitacio(h, rng.getCapacitatHab(),file)
-
-    for r in range(numRes):
-        output.printCapacitatReserva(r, rng.getCapacitatReserva(),file)
-
-    output.printTabbedEndParagraph(file)
-    return
 
 
 if __name__ == '__main__':
