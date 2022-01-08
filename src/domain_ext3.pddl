@@ -38,7 +38,7 @@
           )
           (correcta ?reserva)
           (when (not (= (capacitat_reserva ?reserva) (capacitat_habitacio ?habitacio)))
-            (increase (desperdici_places) ((decrease(capacitat_habitacio ?habitacio) ?reserva))))
+            (increase (desperdici_places) ((-(capacitat_habitacio ?habitacio) (capacitat_resrva ?reserva)))))
       )
   )
 )
