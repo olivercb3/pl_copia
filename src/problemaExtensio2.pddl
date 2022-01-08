@@ -22,6 +22,7 @@
     (= (capacitat_reserva reserva0) 2)
     (= (capacitat_reserva reserva1) 1)
     (= (capacitat_reserva reserva2) 3)
+    (= (reserves_correctes) 0)
     ; N = 0  E = 1  S = 2  O = 3
     (= (orientacio_habitacio habitacio0) 0)
     (= (orientacio_habitacio habitacio1) 3)
@@ -31,6 +32,8 @@
     (= (reserves_mal_orientades) 0)
   )
 
+  ;(:goal (exists (?reserva - reserva) (correcta ?reserva)))
+  ;(:metric maximize (- (reserves_correctes) (reserves_mal_orientades))) ;nomes pot haver-hi un metric
   (:goal (forall (?reserva - reserva) (correcta ?reserva)))
   (:metric minimize (reserves_mal_orientades))
 )
