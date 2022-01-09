@@ -1,5 +1,5 @@
 (define (domain reserves)
-  (:requirements :strips :adl :typing :equality :action-costs)
+  (:requirements :strips :adl :typing :equality :action-costs :fluents)
   (:types
     habitacio - item
     reserva - item
@@ -10,6 +10,7 @@
     (capacitat_habitacio ?habitacio - habitacio)
     (capacitat_reserva ?reserva - reserva)
     (reserves_correctes)
+    (reserves_pendents)
     (orientacio_habitacio ?habitacio - habitacio)
     (orientacio_reserva ?reserva - reserva)
     (reserves_mal_orientades)
@@ -18,7 +19,16 @@
   (:predicates
     (lliure ?habitacio - habitacio ?dia - dia)
     (correcta ?reserva - reserva)
+    (processada ?reserva - reserva)
     (reservada ?reserva - reserva ?dia - dia)
+  )
+
+  (:action marcar_no_reservada
+    :parameters (?reserva - reserva)
+    :precondition
+      (not (processada ?reserva))
+    :effect
+      (and (increase (reserves_pendents) 1) (processada ?reserva))
   )
 
   (:action reservar
@@ -39,6 +49,7 @@
           (forall (?dia - dia)
             (when (reservada ?reserva ?dia) (not (lliure ?habitacio ?dia)))
           )
+          (processada ?reserva)
           (correcta ?reserva)
           (increase (reserves_correctes) 1)
           (when (not (= (orientacio_habitacio ?habitacio) (orientacio_reserva ?reserva)))

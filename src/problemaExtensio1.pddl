@@ -23,8 +23,9 @@
     (= (capacitat_reserva reserva1) 1)
     (= (capacitat_reserva reserva2) 3)
     (= (reserves_pendents) 0)
+    (= (reserves_correctes) 0)
   )
 
-  (:goal (exists (?reserva - reserva) (correcta ?reserva)))
-  (:metric minimize (reserves_pendents))
+  (:goal (forall (?reserva - reserva) (processada ?reserva)))
+  (:metric maximize (+ (reserves_correctes) 0))
 )

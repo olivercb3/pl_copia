@@ -11,13 +11,24 @@
     (capacitat_reserva ?reserva - reserva)
     (desperdici_places)
     (habitacions_diferents)
+    (reserves_correctes)
+    (reserves_pendents)
   )
 
   (:predicates
     (lliure ?habitacio - habitacio ?dia - dia)
     (correcta ?reserva - reserva)
+    (processada ?reserva - reserva)
     (reservada ?reserva - reserva ?dia - dia)
     (utilitzada ?habitacio - habitacio)
+  )
+
+  (:action marcar_no_reservada
+    :parameters (?reserva - reserva)
+    :precondition
+      (not (processada ?reserva))
+    :effect
+      (and (increase (reserves_pendents) 1) (processada ?reserva))
   )
 
   (:action reservar
@@ -43,7 +54,9 @@
               )
             )
           )
+          (processada ?reserva)
           (correcta ?reserva)
+          (increase (reserves_correctes) 1)
           (when (not (utilitzada ?habitacio))
             (and
               (increase (habitacions_diferents) 1)
