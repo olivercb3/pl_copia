@@ -35,6 +35,6 @@
     (= (reserves_mal_orientades) 0)
   )
 
-  (:goal (forall (?reserva - reserva) (correcta ?reserva)))
+  (:goal (forall (?reserva - reserva) (processada ?reserva)))
   (:metric minimize (+ (* 1000 (reserves_pendents)) (reserves_mal_orientades)))
 )

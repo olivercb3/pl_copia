@@ -45,6 +45,6 @@
     (= (reserves_pendents) 0)
   )
 
-  (:goal (forall (?reserva - reserva) (correcta ?reserva)))
+  (:goal (forall (?reserva - reserva) (processada ?reserva)))
   (:metric minimize (+ (* 1000 (reserves_pendents)) (* 1 (desperdici_places))))
 )
