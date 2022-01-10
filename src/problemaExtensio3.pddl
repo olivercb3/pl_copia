@@ -26,7 +26,7 @@
     (= (capacitat_reserva reserva0) 10)
     (= (capacitat_reserva reserva1) 15)
     (= (capacitat_reserva reserva2) 5)
-    (= (capacitat_reserva reserva3) 4)
+    (= (capacitat_reserva reserva3) 11)
     (= (capacitat_reserva reserva4) 3)
     (= (desperdici_places) 0)
     (= (reserves_correctes) 0)
