@@ -14,18 +14,6 @@
     dia3 - dia
   )
   (:init
-    (lliure habitacio0 dia1)
-    (lliure habitacio0 dia2)
-    (lliure habitacio0 dia3)
-    (lliure habitacio1 dia1)
-    (lliure habitacio1 dia2)
-    (lliure habitacio1 dia3)
-    (lliure habitacio2 dia1)
-    (lliure habitacio2 dia2)
-    (lliure habitacio2 dia3)
-    (lliure habitacio3 dia1)
-    (lliure habitacio3 dia2)
-    (lliure habitacio3 dia3)
     (reservada reserva0 dia1)
     (reservada reserva1 dia1)
     (reservada reserva2 dia2)

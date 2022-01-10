@@ -9,12 +9,7 @@
     dia2 - dia
   )
   (:init
-    (lliure habitacio0 dia1)
-    (lliure habitacio0 dia2)
-    (lliure habitacio1 dia1)
-    (lliure habitacio1 dia2)
     (reservada reserva0 dia1)
-    (reservada reserva0 dia2)
     (reservada reserva1 dia1)
     (reservada reserva2 dia2)
     (= (capacitat_habitacio habitacio0) 3)

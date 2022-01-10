@@ -16,7 +16,7 @@
   )
 
   (:predicates
-    (lliure ?habitacio - habitacio ?dia - dia)
+    (ocupada ?habitacio - habitacio ?dia - dia)
     (correcta ?reserva - reserva)
     (processada ?reserva - reserva)
     (reservada ?reserva - reserva ?dia - dia)
@@ -39,7 +39,7 @@
             (>= (capacitat_habitacio ?habitacio) (capacitat_reserva ?reserva))
             (forall (?dia - dia)
                 (or
-                  (lliure ?habitacio ?dia)
+                  (not (ocupada ?habitacio ?dia))
                   (not (reservada ?reserva ?dia))
                 )
             )
@@ -49,7 +49,7 @@
           (forall (?dia - dia)
             (when (reservada ?reserva ?dia)
               (and
-                (not (lliure ?habitacio ?dia))
+                (ocupada ?habitacio ?dia)
                 (increase (desperdici_places) (- (capacitat_habitacio ?habitacio) (capacitat_reserva ?reserva)))
               )
             )

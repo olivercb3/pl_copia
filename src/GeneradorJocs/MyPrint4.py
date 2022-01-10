@@ -33,9 +33,9 @@ def printObjects(numHab,numRes,numDies,file = original_stdout):
 def printInit(numHab,numRes,numDies, rng,file = original_stdout):
     printStartinit(file)
     #lliueres
-    for h in range(numHab):
-        for d in range(numDies):
-            printLliure(h,d,file)
+    #for h in range(numHab):
+    #    for d in range(numDies):
+    #        printLliure(h,d,file)
 
     #reservada
     for r in range(numRes):
