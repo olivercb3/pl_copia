@@ -25,3 +25,5 @@
   (:goal (forall (?reserva - reserva) (processada ?reserva)))
   (:metric maximize (+ (reserves_correctes) 0))
 )
+
+
