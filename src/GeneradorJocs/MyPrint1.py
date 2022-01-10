@@ -52,7 +52,7 @@ def printInit(numHab,numRes,numDies, rng,file = original_stdout):
         printCapacitatReserva(r, rng.getCapacitatReserva(),file)
 
 
-
+    printCounters(file)
     printTabbedEndParagraph(file)
     return
 

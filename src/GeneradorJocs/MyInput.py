@@ -13,7 +13,7 @@ def inputHandler(args):
                         default=15, type=int)
     parser.add_argument('-d', '--dies', help="Numero de dies. Default = 30",
                         default=30, type=int)
-    parser.add_argument('-e', '--extensio', help="Extensio del joc de proves, nivell basic = 0. Default = ouput.pddl",
+    parser.add_argument('-e', '--extensio', help="Extensio del joc de proves, nivell basic = 0. Default = 0",
                         default=0, type=int)
 
     arguments = vars(parser.parse_args(args))

@@ -17,7 +17,7 @@ import MyPrint0 as output0
 import MyPrint1 as output1
 import MyPrint2 as output2
 import MyPrint3 as output3
-import MyPrint3 as output4
+import MyPrint4 as output4
 import randomgenerator as myRandom
 import random
 
@@ -26,24 +26,24 @@ original_stdout = sys.stdout
 def main(arguments):
     args = input.inputHandler(arguments)
     abort = False
-    if args['habitacions'] < 1:
-        print("habitacions han de ser mes gran que 0")
+    if args['habitacions'] < 1 or args['habitacions'] > 200:
+        print("Habitacions ha de ser entre 1 i 200")
         abort = True
 
-    if args['reserves'] < 1:
-        print("reserves han de ser 0 o més")
+    if args['reserves'] < 1 or args['reserves'] > 200:
+        print("Reserves ha de ser entre 1 i 200")
         abort = True
 
-    if args['dies'] < 1:
-        print("han de ser mes gran que 0")
+    if args['dies'] < 1 or args['dies'] > 200:
+        print("Dies ha de ser entre 1 i 200")
         abort = True
 
-    if args['extensio'] < 0 or args['extensio'] > 5:
-        print("extensio ha de ser entre 0 i 4")
+    if args['extensio'] < 0 or args['extensio'] > 4:
+        print("Extensio ha de ser entre 0 i 4")
         abort = True
 
     if abort:
-        sys.exit(main(sys.argv[1:]))
+        sys.exit()
 
     printJocProva(
         extensio = args['extensio'],

@@ -51,8 +51,7 @@ def printInit(numHab,numRes,numDies, rng,file = original_stdout):
     for r in range(numRes):
         printCapacitatReserva(r, rng.getCapacitatReserva(),file)
 
-
-
+    printCounters(file)    
     printTabbedEndParagraph(file)
     return
 
