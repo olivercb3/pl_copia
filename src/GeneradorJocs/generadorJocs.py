@@ -17,6 +17,7 @@ import MyPrint0 as output0
 import MyPrint1 as output1
 import MyPrint2 as output2
 import MyPrint3 as output3
+import MyPrint3 as output4
 import randomgenerator as myRandom
 import random
 
@@ -110,7 +111,7 @@ def printJocProva(
     if numRes is None:
         numRes = rng.getRandomNumber(1,3)
     if outputfile is None:
-        outputfile = "output"+str(printedJocs)+".pddl"
+        outputfile = "output-extensio"+str(extensio)+".pddl"
 
     outFile = open(outputfile, 'w')
 

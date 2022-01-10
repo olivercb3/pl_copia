@@ -58,13 +58,18 @@ def printInit(numHab,numRes,numDies, rng,file = original_stdout):
     for r in range(numRes):
         printOrientacioReserva(r, rng.getOrientation(),file)
 
-    printMalOrientadesReserva(file)
+    printCounters(file)
     printTabbedEndParagraph(file)
     return
 
+def printCounters(file = original_stdout):
+    printCorrecteiPendents(file)
+    printMalOrientadesReserva(file)
+    return
+
 def printGoal(file = original_stdout):
-    print("(:goal (forall (?reserva - reserva) (correcta ?reserva)))", file = file)
-    print("(:metric minimize (reserves_mal_orientades))", file = file)
+    print(" (:goal (forall (?reserva - reserva) (processada ?reserva)))", file = file)
+    print(" (:metric minimize (+ (* 1000 (reserves_pendents)) (reserves_mal_orientades)))", file = file)
     return
 
 def printStart(file = original_stdout):
@@ -125,6 +130,11 @@ def printOrientacioHabitacio(hab, num,file = original_stdout):
 
 def printOrientacioReserva(res, num, file = original_stdout):
     print("    (= (orientacio_reserva reserva" + str(res) + ") " +  str(num) + ")", file = file)
+    return
+
+def printCorrecteiPendents(file):
+    print("    (= (reserves_pendents) 0) ", file = file)
+    print("    (= (reserves_correctes) 0) ", file = file)
     return
 
 def printMalOrientadesReserva( file = original_stdout):

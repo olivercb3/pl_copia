@@ -56,12 +56,18 @@ def printInit(numHab,numRes,numDies, rng,file = original_stdout):
     printTabbedEndParagraph(file)
     return
 
+def printCounters(file = original_stdout):
+    printCorrecteiPendents(file)
+    printDesperdiciPlaces(file)
+    return
+
 def printGoal(file = original_stdout):
-    print(" (:goal (forall (?reserva - reserva) (correcta ?reserva)))", file = file)
+    print(" (:goal (forall (?reserva - reserva) (processada ?reserva)))", file = file)
+    print(" (:metric minimize (+ (* 1000 (reserves_pendents)) (+ (* 90 (habitacions_diferents)) (desperdici_places))))", file = file)
     return
 
 def printStart(file = original_stdout):
-    print("(define (problem basic) (:domain reserves)", file = file)
+    print("(define (problem ext4) (:domain reserves)", file = file)
     return
 
 def printStartObjects(file = original_stdout):
@@ -110,4 +116,14 @@ def printCapacitatHabitacio(hab, num,file = original_stdout):
 
 def printCapacitatReserva(res, num, file = original_stdout):
     print("    (= (capacitat_reserva reserva" + str(res) + ") " +  str(num) + ")", file = file)
+    return
+
+def printCorrecteiPendents(file= original_stdout):
+    print("    (= (reserves_pendents) 0) ", file = file)
+    print("    (= (reserves_correctes) 0) ", file = file)
+    return
+
+def printDesperdiciPlaces(file= original_stdout):
+    print("    (= (desperdici_places) 0)", file = file)
+    print("    (= (habitacions_diferents) 0) ", file = file)
     return
